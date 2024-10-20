@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // Your JSX code here
+      function App() {
+        let container = {
+          textAlign: "center",
+        };
+        let heading = {
+          color: "black",
+          padding: "20px",
+          textAlign: "center",
+        };
+
+        let input = {
+          borderRadius: "18px",
+          height: "47px",
+          width: "30rem",
+          margin: "20px ",
+          backgroundColor: "silver",
+        };
+        let button = {
+          borderRadius: "15px",
+          backgroundColor: "blue",
+          color: "white",
+          height: "47px",
+          width: "9rem",
+          fontSize: "20px",
+        };
+        let headingtwo = {
+          fontSize: "24px",
+          color: "silver",
+        };
+        return (
+          <>
+            <div className="mainContainer" style={container}>
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABOFBMVEX////4+///hHz/hX3+fnT+gHf+fXP+e3DqQzX/gnr+gHb+eW5ChfQ0qFP/8fDFIh/m8P/7vAT/kovkUUn4///iS0L37fD+dmr/3tzu9vaSt/k5gfQ7rVvkVEyDqvfR59seo0Tu9P/+w7/uqKftXS7PLCb+cWXxxsb/6ed/xZPDEw3+bmD/zsv7wAD/9PPhRTvahIXqPS3wY1n+mZL/vLj/o53/y8jhPzTDCADpNCHpc2333t/4qaX61NT9jIP/tbDpfXflYlvsjIfun5rhqqz56Lz614r61HjelpjmuLr57tL7x0f6zl349en55bXNUE/54aTvdU2bseqaQHHnuQ1nsU2JWJbFtiFgcsy3Lz+LsDmiQma7KjBHgOmbrjWBnezOx7bpLBVLsmfS4fxgt3eqxvp3woy23cOlsKg+AAAKc0lEQVR4nO3d/X/ith0HcMBPECVkByL2eqO7kitxE0oObEhyYEhy14ft9rx27R7areu6/f//wSSHB9vYsiRLOLmXPr+0ucOS3ujrrzHwylUqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq72uGsyBwh2WvQlqGZ7d33U6ne3cflL0UOQnuri47YS6vbt2yVyM+7u3aFxpHb96zWh2ediK+0HjXK3tRIhO8vurs5Or+vSlV9/7qcheItvHyTdlLE5LhvJOygauO0z0re3nF47zutLuZaXfum2WvcJsqV05yQzfOR4/UJy4f/ez9F0omlg3EQrmFWjYQC+USywaGQqnEsoEPQpnEsoEroURi2cC1UB6xbOBGKI1YNnArlEUsGxgRSiKWDYwK5RDLBsaEUohlA+NCGcSygQmhBGLZwKRQPLFs4I5QOLFsICImU33fhDsRC1TCMqKESqiE+YE4lI+s0j0wlrKFcPb21au3J1Qr/+zzLz7/jNlYshB+eXx9fn59/Kvc3YG/fvcM5ze/fVrCt9fHYc5f5RF/9+mzh7x7UsKTFfD4+Pr3MwIRwi+ebfIHtkItVQi/3AiPzz/uZa4czv64BT57xzZLucJX5xvh8cej+4xKhWdXLyPCT5+ssH5zl9ZTYfX+pv54hGynSEJYH416O5dGOGuP6o9HOCO1i3xhvX7zJrGNsHeJgAWEMBD5VY43l2cFhYlKhfD+BgOLCE87wr6Rc9a5ZBZeJ4X10Q9nm0qFs+7Nw5/GhD9nE15e3TkifLPbTqfdYRNW/vTn66QQGdc9dVWhCeFXX7MK253Om+Kleop8bWbhB8//cn6eFK4qNeyh9R3hN0e/YBa224W/PDbt4mF4hIff/vU6KUQ9FVXqbLwFboV/O+IStttXrwuUaligvMLD7/5+nhTiSj2rj+o7wq++PuIVtjvte97vOc67Kx+f8PDwoVJjQrSNsR9frir0iF+IS5Xry2Nn480IvMLDb/9xnRQmEgq/PyombHeuXs9Yfe7tZaddWHj4HeqpecKwQosJ27irMpaqHz2cX4grNUf4zdGRACEqVcYvj/cuxmKEqFJvsoGjl98fCRF2xxeMLbV3YdtjIcLn//QyiaPxv17wCzsRn23zCO1+V4Tww8ppfZQOvD35pQhhF62VT7jdxmJCGHRSiKObUwiLCNdVOrYBv3BtLCaMv1BbA7v4jqy4cLxaKLfQHneLCxExWamoQvGQRYXdvl1YGG5jUSG+Yb2MEEc/+A+3UgWFY7AJs7C/FQJ7XFyItvF2U6k34/V7BoWE6AQUI8TE7HcEaYWRSr2539zvFxFeACBKiLNk+fAkVYhv7XGljkan27eleIWw2juwxQr7YEr5SVK2sApPbm+2FcovhNBp9ONA0C8qRMYW9RtuWUJcqbexYuASQndiJ3xChGgb55SlminExtgQHEJUoFZyA4sJt4PYfT2gKlWCMBFmIYTB4mKHxyVMGwVQlqo8ITxJKVCRQmQEfv4Hu7KEsOofpPsECtE2Gmd5pSpHCOFskbksgUJs9HJKVYoQFWhKg5EiREbLJ3ZVPuG/SUJYnWYWqAQhGm9B7Ko/cghffELwwVkrb0WChbirkjrOT883oRS++A8BeDK/SNlAKxrhwrBUCcYfP/hwlZ+Iwv9+ssr/sn3VXsO28iJBiApDI5TqdiwCkOZhcOb1QS5QjhDYFx7dt574E3bQfJ8sYV6pFvfhDkrjkya0LNBv0b1W5fGhArUpClSoMGVo0J/I2cawg1L6eITUQ1uWlFJlKFD5QgvYi5ngUqXsoPsSCi9VVKA2ywbuQYhKFfR4vumb6mMs0D0JkbElplTRa1DqDlpAyPwcWrhU58VLFVaXHL49CQWUKqwOTL6p9yTEpVpkG6HrsU5srrI/oedylyq6iXAXaRVqUmRfQrs11Po2V6miDmr2J26N2lSKELRcD/B1VYiPNMHcMTl4+xMeuPPwQGAzlirqoBZA67TANABcRHsvQuDO++sJ9d0vPhN8AboPW+1FMLBLF2bMYVmOD7Y/2XnvOW6BM2+7b5YV9HiI7EL2OfqDwI7qgUn1SQ6s+haIHIZKfQKSYz8KYX8aB+Jt1M/yjBAOtMRcltGcsE8vX4i64MFO/aLmSi7Vhw6aHAp35EcnBJNmLe0EtUh3x/iTljQKGkxjaag6imwh8JqtjKfdrmV8kgNhkCzQLXFoxIl6NPGfHiJZaC2a2XWV0VXx20yZG2Uv3YM0R3bkCi2N3P6AvtNV4YmvWwSD3XMAE1Gy0FlmPz4sK6DFShV/Vm0TASYYTJmIUoW2E3946ortlrsh4pukvNWjUX1QojC6FDAdkOptHetg1VVRB61Z+Y83DVQZVLgDHC4h1fC67Ts0QPxU4A8dcYHSlR9qX5PtLh7khFlIXSCo61GfL2bfm53kF+iaZGpDz8qTSReCibNgaAhWI16g5FWbntuiJcoSWq1mK+ecii8kv9yiAfiySPVIQ5IwHchiyAk6B6z08YxEgGhhOIupuXPqE4UjeOG9wNCTmrRwCfMWoAN3CQQoSNFBMAVZfxkdh12YvzbddGgehhUMpB2iju75jdUgRvr4koS6OR3YWfvMyMjcGTxPzV2mngrxoyQIgU95hlAoMhPuYq05sXJH5BXGVhUfce5qphAFYZKHmKhjk6fiEuYNOGke7MzKQ6KJ6Q1znk2BwtUa8asN8qWYVUEmTtxF2hkRmU/weRieGoIVWQmfLuA70Uaa8jBmYfqFfDWartGc+4VMyYCeQ56RXUgaTXP8gkCOwh4MiKeiUCHpZUYeg+a49JiuT5pVpBABM/5WLGlnXiJRnPDA9AN5ClL0hTtJFGpjm+KdZj2otXRTL8vSskWYXrOlNzLCI0ydD12ZtL2RkiERRVWpjueQyyDFnLuLjEMFCfVW08t9hVhQQSYuXT19XDFCHd/TExQyTPEYZi8wU6exxOwhulOTryAHBAMz7c/ZhbtjGEbQy2xl+4vhpC1OiBBMHVD2DqIY6FV/yi4KECJg+hmw7xiNNGJxob50tLKBtYcYnjvRa4kUFpqT5n6AyZWnRceLKSpMlAF+NSEJSENKBj/fiQMLCo0Wqot9M4hE36nFBy0mNLTU9iVZQYyFGntsRrOI0Ki5yzTgXknJmINB7FTkFqJjG7rTM0tyENJw/OhzzC7cjqSjZ6vc/UpNQ3OXkWtGAaHuO+YjBCLiohm5LPIL0f1KyWdcZhroXm5zLnIL9YnbSl5cy4wWTQNdpRur/+cVGt5w/0CNOvrc1Wp8wlUnNrymt4cSpSftEH3XCA+vaYy/b9cJXY2FM995ibt/BinGNAiHrrVY/3FoDS8KuD7bhVCOghjLmZroP40JI7Di6/ia2svbwRJIidQaASaynoaVSnPRaEwH+uNQEFNbuMtGzWMFol5j95xHrwtT04YTi+f3eg8c7UkAcZdxGX8B7SpL46kIawMuYKUybTwJI7qmcQIrleFS0zku+PvD4TufRbHfOz8czL3W4403WYr45xGGzUcb3l83r6KioqKioqKioqKioqKioqKioqKym/8D6mvFRMyXYZQAAAAASUVORK5CYII="
+                alt=""
+              />
+              <h1 style={heading}>
+                <strong>SUBSCRIBE</strong>
+              </h1>
+              <h4 style={headingtwo}>
+                Subscribe to our newsletter & stay up to date!
+              </h4>
+              <input type="email" id="input1" style={input} />
+              <span>
+                <button style={button}>SUBSCRIBE</button>
+              </span>
+            </div>
+          </>
+        );
+      }
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
+    </script>
+  </body>
+</html>
